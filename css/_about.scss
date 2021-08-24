@@ -1,0 +1,50 @@
+.about_hero {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4) 100%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("../images/couple-officeee.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+
+  .col-md-12 {
+    margin-top: 10rem;
+    text-align: center;
+  }
+  .about-hero__bigText {
+    color: white;
+    @include fontFirsty;
+  }
+  .breadcrumbs {
+    z-index: 99;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    span {
+      a {
+        color: #fff;
+        transition: $transition;
+      }
+      a:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+.counter {
+  padding: 3rem 0;
+  padding-bottom: 0;
+  margin-bottom: 3rem;
+  background: #f5f4f0;
+  .number {
+    color: $primary-color;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .text {
+    display: block;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+}

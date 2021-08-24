@@ -1,0 +1,117 @@
+.counselor_hero {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4) 100%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("../images/couple-officeee.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+
+  .col-md-12 {
+    margin-top: 10rem;
+    text-align: center;
+  }
+  .counselor-hero__bigText {
+    color: white;
+    @include fontFirsty;
+    text-transform: capitalize;
+  }
+  .breadcrumbs {
+    z-index: 99;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    span {
+      a {
+        color: #fff;
+        transition: $transition;
+      }
+      a:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+.counselors {
+  padding: 5rem 0;
+  background: #f5f4f0;
+  .profile__bg {
+    height: 300px;
+
+    .img {
+      width: 100%;
+      display: block;
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .profile__card {
+    position: relative;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .profile__details {
+    padding: 1.5rem 0.7rem;
+  }
+  .name {
+    font-size: 1.4rem;
+  }
+  .roll {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+  }
+  .bio {
+    margin-top: 0.6rem;
+    @include fontRegular;
+  }
+  .social-links {
+    @include align-center;
+    justify-content: center;
+    position: absolute;
+    top: 240px;
+    left: 0;
+    right: 0;
+    padding: 15px 10px;
+    background: transparent;
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.4s ease;
+    li {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      margin-right: 0.7rem;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      background: $primary-color;
+      border-radius: 50%;
+    }
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .counselors {
+    .social-links {
+      top: 290px;
+      z-index: -1;
+    }
+    .profile__card:hover {
+      .social-links {
+        top: 240px;
+        z-index: 1;
+      }
+    }
+  }
+}

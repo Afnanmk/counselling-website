@@ -1,0 +1,43 @@
+.contact-us {
+  background-color: #f5f4f0;
+  padding: 5rem 0;
+
+  .contact-wrap {
+    background: #fff;
+  }
+  .contact-info {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .icon {
+    background: $primary-color;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    @include align-center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    .fas {
+      color: #fff;
+      font-size: 1.7rem;
+    }
+  }
+  .info {
+    @include fontRegular;
+
+    strong {
+      color: black;
+    }
+  }
+  .label {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  .btn {
+    background: $primary-color;
+    border-color: $primary-color;
+  }
+}

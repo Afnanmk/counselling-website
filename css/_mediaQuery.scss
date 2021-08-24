@@ -1,0 +1,62 @@
+@media only screen and (max-width: 768px) {
+  .hero {
+    background-position: center;
+    height: auto;
+
+    .hero__bigText {
+      font-size: 3rem;
+    }
+    .hero__button {
+      font-size: 1rem;
+    }
+    .play-button {
+      margin-top: 3rem;
+    }
+  }
+  .services {
+    .service:not(:first-child) {
+      margin-top: $mobile-margin-top;
+    }
+  }
+  .welcome {
+    .welcome__right {
+      padding: 3rem 1rem;
+    }
+  }
+  .testimonial {
+    .testimonial__bg {
+      background-position: center;
+    }
+  }
+  .packages {
+    .col-md-4:not(:first-child) {
+      margin-top: $mobile-margin-top;
+    }
+  }
+
+  .contact {
+    background-position: center;
+  }
+  .blog {
+    .col-md-4:not(:first-child) {
+      margin-top: $mobile-margin-top;
+    }
+  }
+  .footer {
+    .col-md:not(:first-child) {
+      margin-top: $mobile-margin-top;
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .navbar {
+    .nav-link {
+      margin-left: 0;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+    }
+  }
+}

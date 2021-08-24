@@ -1,0 +1,644 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600;700;800&display=swap&rel=preconnect");
+@import "mixins-variables-extends";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+body {
+  font-family: "Georama", sans-serif;
+}
+a:hover {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+// **************************** NAVBAR ******************************
+@import "navbar";
+
+// **************************** HERO ******************************
+.hero {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4) 100%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("../images/heroo-3.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  min-height: 100vh;
+
+  .hero__bigText {
+    color: white;
+    @include fontFirsty;
+  }
+
+  .hero__para {
+    @include fontRegular;
+    color: white;
+    font-size: 1.3rem;
+    margin: 1.6rem 0;
+  }
+  .hero__buttons {
+    @include align-center;
+  }
+  .hero__button {
+    @include button;
+    margin-right: 1rem;
+  }
+  .hero__button--white {
+    background-color: transparent;
+    border: 2px solid white;
+
+    &:hover {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+  .play-button {
+    background-color: rgb(242, 252, 255);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    @include align-center;
+    justify-content: center;
+    animation: ripple 1.5s linear infinite;
+    transition: all 0.7s ease;
+
+    img {
+      width: 23px;
+    }
+  }
+}
+
+// **************************** QUALITY ******************************
+.quality {
+  .quality__card {
+    @include align-center;
+    color: white;
+    padding: 1.5rem 1.5rem;
+    background-color: $primary-color;
+  }
+  .dark {
+    background-color: #135d61;
+  }
+  .darker {
+    background-color: #12585c;
+  }
+  .quality__icon {
+    width: 70px;
+    margin-right: 1rem;
+  }
+  .quality__title {
+    @include fontThirdy;
+  }
+  .quality__para {
+    opacity: 0.9;
+  }
+}
+// **************************** SERVICES ******************************
+.services {
+  padding: 5rem 0;
+  text-align: center;
+
+  .services__tag {
+    @include fontSectionTag;
+  }
+  .services__title {
+    @include fontSecondary;
+  }
+  .service__name {
+    @include fontThirdy;
+    margin-top: 1rem;
+    color: $font-thirdy-black;
+  }
+  .service__para {
+    @include fontRegular;
+  }
+  .service__icon-wrapper {
+    @include align-center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: #f5f4f0;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: 0;
+    transition: $transition;
+
+    .number {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include align-center;
+      justify-content: center;
+      color: white;
+      background-color: $primary-color;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border: 5px solid white;
+      z-index: 2;
+      font-weight: 600;
+    }
+    .icon::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      position: absolute;
+      top: 30%;
+      left: 40px;
+      z-index: -1;
+      transition: $transition;
+    }
+    .icon {
+      position: relative;
+      img {
+        width: 70px;
+      }
+    }
+  }
+
+  // HOVER
+  .service:hover {
+    .service__icon-wrapper {
+      background: $primary-color;
+    }
+    .number {
+      background: white;
+      color: $primary-color;
+    }
+    .icon::after {
+      background: white;
+      left: 30px;
+    }
+  }
+}
+// **************************** WELCOME ******************************
+.welcome {
+  .welcome__left {
+    background: url("../images/welcome-imagee-2.webp") no-repeat;
+    background-size: cover;
+    background-position: -130px;
+  }
+  .welcome__right {
+    background: #f5f4f0;
+    padding: 3rem;
+  }
+  .welcome__tag {
+    @include fontSectionTag;
+  }
+  .welcome__title {
+    @include fontSecondary;
+    line-height: 3.4rem;
+    margin-bottom: 2rem;
+  }
+  .welcome__para {
+    @include fontRegular;
+  }
+  .welcome__video {
+    @include align-center;
+
+    p {
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+  }
+  .video__icon {
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    margin-right: 1rem;
+  }
+  .play-img {
+    width: 16px;
+  }
+}
+// **************************** SERVICE-CATEGORY ******************************
+.service-category {
+  padding: 5rem 0;
+  .service-category__tag {
+    @include fontSectionTag;
+  }
+  .service-category__title {
+    @include fontSecondary;
+  }
+  .nav-item {
+    margin-bottom: 1rem;
+  }
+  .nav-link {
+    background: #fff;
+    border-radius: 4px;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0.9rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+
+  .tab-img {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .tab__name {
+    @include fontThirdy;
+    font-size: 1.6rem;
+    a {
+      color: #000 !important;
+    }
+  }
+  .tab__para {
+    @include fontRegular;
+  }
+  .active {
+    background: $primary-color;
+    color: white;
+  }
+  .tab-pane {
+    background: white;
+  }
+}
+// **************************** TESTIMONIAL ******************************
+.testimonial {
+  padding: 5rem 0;
+  position: relative;
+  z-index: 0;
+
+  .testimonial__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 400px;
+    background: url("../images/happy-clientss.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -200px;
+    z-index: -1;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 400px;
+    background: $primary-color;
+    opacity: 0.7;
+    z-index: -1;
+  }
+  .testimonial__tag {
+    @include fontSectionTag;
+    color: white;
+  }
+  .testimonial__title {
+    @include fontSecondary;
+    color: white;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  .glide__slides {
+    padding-bottom: 2rem;
+  }
+  .glide__slide {
+    position: relative;
+    background: #fff;
+    border-radius: 6px;
+    padding: 1.5rem 1.3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .testimonial__para {
+    @include fontRegular;
+  }
+  .testimonial__user {
+    @include align-center;
+  }
+  .testimonial__name {
+    margin-top: 1rem;
+    h4 {
+      text-transform: capitalize;
+      font-size: 1.2rem;
+    }
+    .roll {
+      text-transform: capitalize;
+    }
+  }
+  .quote-icon {
+    background: $primary-color;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    @include align-center;
+    justify-content: center;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .glide__bullets {
+    bottom: -1.5em;
+  }
+  .glide__bullet {
+    background: $primary-color;
+    margin: 0 0.55em;
+    width: 11px;
+    height: 11px;
+  }
+}
+// **************************** PACKAGES ******************************
+.packages {
+  padding: 5rem 0;
+  background: #f5f4f0;
+  text-align: center;
+  .packages__tag {
+    @include fontSectionTag;
+  }
+  .packages__title {
+    @include fontSecondary;
+  }
+  .package-card {
+    padding: 2rem 1.7rem;
+    text-transform: capitalize;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 6px;
+  }
+  .packages__price {
+    sup {
+      font-size: 24px;
+      top: -1em;
+      color: #b3b3b3;
+    }
+    sub {
+      color: #646464;
+      font-size: 15px;
+    }
+    .number {
+      @include fontFirsty;
+      font-size: 3.5rem;
+      color: $primary-color;
+    }
+  }
+  .packages__category-name {
+    @include fontThirdy;
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  .packages__pricing-list li {
+    margin-bottom: 1.2rem;
+    @include fontRegular;
+  }
+  .fa-check {
+    margin-right: 0.7rem;
+    color: $primary-color;
+  }
+  .packages__button {
+    @include button;
+    width: 100%;
+    margin-top: 1.2rem;
+    text-transform: uppercase;
+  }
+}
+// **************************** CONTACT ******************************
+.contact {
+  padding: 5rem 0;
+  position: relative;
+  background: url("../images/contacthappy-clientt.webp") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    content: "";
+    opacity: 0.5;
+    background: $primary-color;
+  }
+
+  .contact__title {
+    @include fontSecondary;
+    color: #fff;
+  }
+  .form-control {
+    border: transparent;
+    background: white !important;
+    color: rgba(0, 0, 0, 0.8) !important;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-transform: capitalize;
+    height: 52px;
+  }
+  .textarea {
+    height: initial;
+  }
+  .contact__btn {
+    @include button;
+    width: 100%;
+  }
+  .icon {
+    position: absolute;
+    top: 50% !important;
+    right: 15px;
+    font-size: 16px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .fa-chevron-down {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+// **************************** BLOG ******************************
+.blog {
+  text-align: center;
+  padding: 5rem 0;
+  .blog__tag {
+    @include fontSectionTag;
+  }
+  .blog__title {
+    @include fontSecondary;
+  }
+  .blog__image {
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    z-index: -1;
+  }
+  .datetime {
+    @include align-center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f5f4f0;
+    margin: 0 auto;
+    margin-top: -70px;
+    z-index: 1;
+    transition: $transition;
+
+    span {
+      display: block;
+      line-height: 1.2;
+    }
+    .day,
+    .month {
+      font-weight: 600;
+    }
+    .day {
+      font-size: 30px;
+
+      color: $primary-color;
+    }
+    .month {
+      text-transform: uppercase;
+    }
+    .yr {
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+  }
+  .blog__card:hover {
+    .datetime {
+      background: $primary-color;
+    }
+    .day {
+      color: white;
+    }
+  }
+  .blog__heading {
+    @include fontThirdy;
+    margin-top: 0.8rem;
+    transition: $transition;
+
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+  .blog__desc {
+    @include fontRegular;
+  }
+}
+// **************************** FOOTER ******************************
+.footer {
+  background: rgb(20, 20, 20);
+  padding-top: 5rem;
+
+  a {
+    color: white;
+  }
+  .footer__widget {
+    color: #fff;
+  }
+
+  .footer__heading {
+    @include fontThirdy;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .footer__text,
+  .footer__menu a,
+  .text {
+    @include fontRegular;
+    color: rgb(192, 192, 192);
+    text-transform: capitalize;
+  }
+  .fas {
+    margin-right: 0.7rem;
+    color: white;
+  }
+  .footer__menu li {
+    margin-bottom: 1rem;
+  }
+
+  .footer__social a {
+    background: $primary-color;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: block;
+    float: left;
+    margin-right: 1rem;
+    .fab {
+      display: flex;
+      justify-content: center;
+      margin-top: 17px;
+    }
+  }
+  .footer__social a:last-child {
+    margin-top: 1rem;
+  }
+  .email {
+    display: flex;
+    align-items: center;
+
+    .text {
+      text-transform: lowercase;
+    }
+  }
+  .footer-bottom {
+    margin-top: 5rem;
+    padding: 2rem 0;
+    background: #000;
+  }
+  .footer-bottom-text {
+    color: rgb(151, 151, 151);
+  }
+}
+.modal-content iframe {
+  margin: 0 auto;
+  display: block;
+}
+
+@import "animation";
+@import "mediaQuery";
+
+@import "about";
+@import "counselor";
+@import "services";
+@import "pricing";
+@import "blog";
+@import "contact";

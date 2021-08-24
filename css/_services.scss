@@ -1,0 +1,27 @@
+.service-types {
+  padding: 5rem 0;
+  background: #dddd;
+  .service-types__title {
+    @include fontSecondary;
+    text-align: center;
+  }
+  .service__wrap {
+    background: #fff;
+  }
+  .img {
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .text {
+    width: 50%;
+    padding: 1.5rem 1.8rem;
+    h2 {
+      @include fontThirdy;
+    }
+    p {
+      @include fontRegular;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+:root {
+  --cream-color: rgb(241, 235, 235);
+}
+$primary-color: #186569;
+$hover-color: #0e4447;
+$regular-font-color: rgb(92, 92, 92);
+$font-secondary-color: rgb(13, 49, 63);
+$font-thirdy-black: rgb(70, 70, 75);
+$transition: 0.3s all;
+$mobile-margin-top: 3rem;
+$color: white;
+
+@mixin fontFirsty {
+  font-size: 3.7rem;
+  font-weight: 700;
+}
+@mixin fontSecondary {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: $font-secondary-color;
+  text-transform: capitalize;
+  margin-bottom: 3.5rem;
+}
+@mixin fontThirdy {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+@mixin fontRegular {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $regular-font-color;
+  line-height: 1.8rem;
+}
+@mixin fontSectionTag {
+  color: $primary-color;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+@mixin button {
+  background-color: $primary-color;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.8em 1.4em;
+  border-radius: 5px;
+  text-transform: capitalize;
+  transition: $transition;
+  border: 2px solid $primary-color;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
