@@ -30,7 +30,7 @@ html {
       rgba(0, 0, 0, 0.4) 100%,
       rgba(0, 0, 0, 0.4) 100%
     ),
-    url("../images/heroo-3.webp");
+    url("../images/hero-compressed.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -190,7 +190,7 @@ html {
 // **************************** WELCOME ******************************
 .welcome {
   .welcome__left {
-    background: url("../images/welcome-imagee-2.webp") no-repeat;
+    background: url("../images/welcome-compressed.jpg") no-repeat;
     background-size: cover;
     background-position: -130px;
   }
@@ -291,7 +291,7 @@ html {
     right: 0;
     content: "";
     height: 400px;
-    background: url("../images/happy-clientss.webp");
+    background: url("../images/group-cheerful-friends.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center -200px;
